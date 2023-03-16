@@ -2,7 +2,7 @@ package com.arash.altafi.cachemanagment.utils
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
-import com.aaaamirabbas.reactor.handler.Reactor
+import com.arash.altafi.cachemanagment.reactor.handler.Reactor
 import com.arash.altafi.cachemanagment.model.EnumSample
 import com.arash.altafi.cachemanagment.model.User
 import javax.inject.Inject

@@ -1,6 +1,6 @@
 package com.arash.altafi.cachemanagment.model
 
-import com.aaaamirabbas.reactor.helper.ReactorContract
+import com.arash.altafi.cachemanagment.reactor.helper.ReactorContract
 import com.arash.altafi.cachemanagment.utils.CacheContract
 import com.google.gson.annotations.SerializedName
 
