@@ -7,6 +7,7 @@ import com.arash.altafi.cachemanagment.databinding.ActivityMainBinding
 import com.arash.altafi.cachemanagment.model.EnumSample
 import com.arash.altafi.cachemanagment.model.User
 import com.arash.altafi.cachemanagment.utils.Cache
+import com.arash.altafi.cachemanagment.utils.SharedPreferencesUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +35,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() = binding.apply {
+        //region SharedPreferences
+        SharedPreferencesUtils.sharedPrefName(this@MainActivity)
+
+        btnPutSharedPreferences.setOnClickListener {
+            SharedPreferencesUtils.save("test string SharedPreferences")
+            successFullySaved("String SharedPreferences Saved SuccessFully")
+        }
+
+        btnGetSharedPreferences.setOnClickListener {
+            scrollUp()
+            tvShow.text = SharedPreferencesUtils.get()
+        }
+        //endregion
+
         //region DataStore
 
         //region object data store
@@ -305,6 +320,7 @@ class MainActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.Main).launch { //use Dispatchers.IO
                 cache.eraseAllData()
             }
+            SharedPreferencesUtils.clear()
             successFullySaved("Erase All Data SuccessFully")
         }
         //endregion
